@@ -1,6 +1,9 @@
 const dataTableBody = document.querySelector('#dataTable tbody');
+const totalCustomercount = document.getElementById('totalCustomerCount')
+const activeMemberCount = document.getElementById('totalActiveMembers')
+const filter = document.getElementById('filter')
 
-        const localJsonData = [
+const localJsonData = [
             { "customerName": "Jane Cooper", "company": "Microsoft", "phoneNumber": "(225) 555-0118", "email": "jane@microsoft.com", "country": "United States", "status": "Active" },
             { "customerName": "Floyd Miles", "company": "Yahoo", "phoneNumber": "(205) 555-0100", "email": "floyd@yahoo.com", "country": "Timor-Leste", "status": "Inactive" },
             { "customerName": "Ronald Richards", "company": "Adobe", "phoneNumber": "(302) 555-0107", "email": "ronald@adobe.com", "country": "Paraguay", "status": "Active" },
@@ -33,8 +36,52 @@ const dataTableBody = document.querySelector('#dataTable tbody');
             statusCell.classList.add(data.status ? data.status.toLowerCase() : '');
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            if (localJsonData && localJsonData.length > 0) {
-                localJsonData.forEach(item => addTableRowToDOM(item));
+        function updateCustomerCount(data){
+            totalCustomercount.textContent = data.length
+            activeMemberCount.textContent = data.filter(customer=> customer.status==='Active').length
+        }
+
+        function sortTable() {
+            dataTableBody.innerHTML = ''
+            const selectedStatus = filter.value;
+
+            let filteredData = [...localJsonData]
+            console.log(selectedStatus)
+            if (selectedStatus =='country') {
+                filteredData.sort((a, b) => {
+                    const countryA = a.country.toLowerCase();
+                    const countryB = b.country.toLowerCase();
+
+                    return countryA.localeCompare(countryB);
+                });
             }
+            else if(selectedStatus==='company'){
+                filteredData.sort((a, b) => {
+                    const countryA = a.company.toLowerCase();
+                    const countryB = b.company.toLowerCase();
+
+                    return countryA.localeCompare(countryB);
+                });
+            }
+            else if(selectedStatus==='name'){
+                filteredData.sort((a, b) => {
+                    const countryA = a.customerName.toLowerCase();
+                    const countryB = b.customerName.toLowerCase();
+
+                    return countryA.localeCompare(countryB);
+                });
+            }
+
+            if (filteredData.length > 0) {
+                filteredData.forEach(customer => addTableRowToDOM(customer));
+            } else {
+                console.log("No data matches the filter criteria.");
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            sortTable()
+            updateCustomerCount(localJsonData)
         });
+
+        filter.addEventListener('change', sortTable)

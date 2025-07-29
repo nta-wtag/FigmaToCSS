@@ -275,17 +275,21 @@ body {
     padding: 0 1rem;
 }
 
-.dash-bottom-top-right-sort{
-    background-color: #FAFBFF;
-    width: 150px;
-    height: 32px;
+.filter-selection{
     display: flex;
     align-items: center;
     gap: .5rem;
     border-radius: 8px;
     padding: 0 1rem;
+    background-color: #FAFBFF;
+    width: 150px;
+    height: 32px;
 }
 
+.filter-section select {
+    background-color: #FAFBFF;
+    width: 100px;
+}
 
 table {
             width: 100%; /* Increased width to accommodate more columns */

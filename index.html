@@ -94,7 +94,7 @@
                     <img class="dash-mid-divs-img" src="assets/profile-2user.svg"/>
                     <div>
                         <p>Total Customers</p>
-                        <h1>5,423</h1>
+                        <h1 id="totalCustomerCount">5,423</h1>
                         <div class="dash-mid-divs-txt">
                             <img src="assets/arrow-up 1.svg"/>
                             <span>16% this month</span>
@@ -116,7 +116,7 @@
                     <img class="dash-mid-divs-img" src="assets/monitor.svg" />
                     <div>
                         <p>Active Now</p>
-                        <h1>189</h1>
+                        <h1 id="totalActiveMembers">189</h1>
                         <div>
                             <img src="assets/Ellipse 58.svg"/>
                             <img src="assets/Ellipse 59.svg"/>
@@ -137,11 +137,14 @@
                             <img src="assets/search 1.svg"/>
                             <span>Search...</span>
                         </div>
-                        <div class="dash-bottom-top-right-sort">
-                            <span>Sort by: </span>
-                            <div>Newest</div>
-                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                        </div>
+                            <div class="filter-section">
+                                <label for="filter">Sort by:</label>
+                                <select id="filter">
+                                    <option value="name">Name</option>
+                                    <option value="company">Company</option>
+                                    <option value="country">Country</option>
+                                </select>
+                            </div>
                     </div>
                 </div>
                 <table id="dataTable">
