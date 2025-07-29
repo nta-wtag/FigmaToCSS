@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><style>
+    </style>
+    <title>To Do List</title>
+</head>
+<body>
+    <div class="main">
+        <div class="menu">
+            <div class="menu-above">
+                <div class="menu-top">
+                <img src = "assets/setting.svg" alt="My Happy SVG"/>
+                <div class="menu-top-txt">
+                    <h1>Dashboard</h1>
+                    <p class="v-class">v.01</p>
+                </div>
+            </div>
+            <div class="menu-list">
+                 <div class="menu-fields">
+                    <div class="menu-items">
+                        <img src = "assets/key-square.svg" alt="My Happy SVG" />
+                        <p>Dashboard</p>
+                    </div>
+                </div>
+                <div class="menu-fields">
+                    <div class="menu-items">
+                        <img src = "assets/3d-square 1.svg" alt="My Happy SVG"/>
+                        <span>Product</span>
+                    </div>
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </div>
+                <div class="menu-fields-active">
+                    <div class="menu-items">
+                        <img src = "assets/user-square 1.svg" alt="My Happy SVG"/>
+                        <span>Customers</span>
+                    </div>
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </div>
+                <div class="menu-fields">
+                    <div class="menu-items">
+                        <img src = "assets/wallet-money 2.svg" alt="My Happy SVG"/>
+                        <span>Income</span>
+                    </div>
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </div>
+                <div class="menu-fields">
+                    <div class="menu-items">
+                        <img src = "assets/discount-shape 1.svg" alt="My Happy SVG"/>
+                        <span>Promote</span>
+                    </div>
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </div>
+                <div class="menu-fields">
+                    <div class="menu-items">
+                        <img src = "assets/message-question 1.svg" alt="My Happy SVG"/>
+                        <span>Help</span>
+                    </div>
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </div>
+            </div>
+            </div>
+            <div class="menu-below">
+                <div class="pro">
+                <p>Upgrade to PRO to get access to all Features!</p>
+                <div class="pro-btn">Get Pro Now!</div>
+            </div>
+            <div class="profile">
+                <div class="profile-left">
+                    <img src = "assets/3389ec299edb640f65b7cb2d606c9ae4d3bd74e2.png" alt="My Happy SVG"/>
+                    <div class="profile-details">
+                        <span>Evano</span>
+                        <p>Project Manager</p>
+                    </div>
+                </div>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </div>
+            </div>
+        </div>
+        <div class="dash">
+            <div class="dash-top">
+                <h1>Hello Evano 👋🏼,</h1>
+                <div class="search-bar">
+                    <img src = "assets/search 1.svg" alt="My Happy SVG"/>
+                    <p>Search...</p>
+                </div>
+            </div>
+            <div class="dash-mid">
+                <div class="dash-mid-divs">
+                    <img class="dash-mid-divs-img" src="assets/profile-2user.svg"/>
+                    <div>
+                        <p>Total Customers</p>
+                        <h1>5,423</h1>
+                        <div class="dash-mid-divs-txt">
+                            <img src="assets/arrow-up 1.svg"/>
+                            <span>16% this month</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dash-mid-divs">
+                    <img class="dash-mid-divs-img" src="assets/profile-tick.svg"/>
+                    <div>
+                        <p>Members</p>
+                        <h1>1,893</h1>
+                        <div class="dash-mid-divs-txt">
+                            <img src="assets/arrow-down 1.svg"/>
+                            <span>1% this month</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dash-mid-divs">
+                    <img class="dash-mid-divs-img" src="assets/monitor.svg" />
+                    <div>
+                        <p>Active Now</p>
+                        <h1>189</h1>
+                        <div>
+                            <img src="assets/Ellipse 58.svg"/>
+                            <img src="assets/Ellipse 59.svg"/>
+                            <img src="assets/Ellipse 60.svg"/>
+                            <img src="assets/Ellipse 61.svg"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dash-bottom">
+                <div class="dash-bottom-top">
+                    <div>
+                        <h1>All Customers</h1>
+                        <p>Active Members</p>
+                    </div>
+                    <div class="dash-bottom-top-right">
+                        <div class="dash-bottom-top-right-search">
+                            <img src="assets/search 1.svg"/>
+                            <span>Search...</span>
+                        </div>
+                        <div class="dash-bottom-top-right-sort">
+                            <span>Sort by: </span>
+                            <div>Newest</div>
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+                <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th>Customer Name</th>
+                        <th>Company</th>
+                        <th>Phone Number</th>
+                        <th>Email</th>
+                        <th>Country</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+    <script src="script.js">
+    </script>
+</body>
+</html>
