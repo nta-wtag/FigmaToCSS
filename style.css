@@ -1,3 +1,9 @@
+:root {
+    --primary-color: #F8F8F8; 
+    --secondary-color: #5932EA; 
+    --secondary-color2: #EAABF0; 
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -6,11 +12,11 @@
 
 body {
     font-family: "Poppins", sans-serif;
-    background-color: #F8F8F8; /* Light background for the whole page */
-    min-height: 100vh; /* Ensure body takes full viewport height */
-    display: flex; /* Make body a flex container */
-    justify-content: center; /* Center content horizontally */
-    align-items: flex-start; /* Align content to the top vertically */
+    background-color: var(--primary-color); 
+    min-height: 100vh;
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-start; 
 }
 
 .main{
@@ -20,7 +26,7 @@ body {
     grid-template-columns: 2fr 9fr ;
     overflow: hidden;
     border-radius: 12px;
-    background-color:#FAFBFF;
+    background-color:var(--primary-color); 
     font-size: 12px;
 }
 
@@ -79,7 +85,7 @@ body {
 
 .menu-fields-active{
     align-items: center;
-    background-color: #5932EA;
+    background-color: var(--secondary-color); 
     padding: 1rem;
     color: white;
     border-radius: .5rem;
@@ -102,7 +108,7 @@ body {
 }
 
 .pro{
-    background-image: linear-gradient(135deg, #EAABF0, #4623E9);
+    background-image: linear-gradient(135deg, var(--secondary-color2), var(--secondary-color));
     width: 100%;
     padding: 1rem 3rem;
     border-radius: 1rem;
@@ -147,7 +153,7 @@ body {
 }
 
 .profile img{
-    height: 40px;
+    height: 4vh;
     border-radius: 50%;
 }
 
@@ -177,7 +183,7 @@ body {
     display: flex;
     background-color: white;
     padding: .25rem 1rem;
-    width: 200px;
+    width: 16rem;
     box-shadow: 0px 0px 10px rgba(0,0,0,0.05);
     border-radius: 8px;
     align-items: center;
@@ -210,9 +216,8 @@ body {
 .dash-mid-divs-img{
     background-color: #D3FFE7;
     border-radius: 50%;
-    width: 75px;
     padding: 20px;
-    height: 75px;
+    height: 8vh;
 }
 
 .dash-mid-divs p{
@@ -266,8 +271,8 @@ body {
 
 .dash-bottom-top-right-search{
     background-color: #FAFBFF;
-    width: 150px;
-    height: 32px;
+    width: 12rem;
+    height: 4vh;
     display: flex;
     align-items: center;
     gap: .5rem;
@@ -279,28 +284,26 @@ body {
     display: flex;
     align-items: center;
     gap: .5rem;
+    height: 4vh;
     border-radius: 8px;
     padding: 0 1rem;
-    background-color: #FAFBFF;
-    width: 150px;
-    height: 32px;
+    background-color: var(--primary-color); 
 }
 
 .filter-section select {
-    background-color: #FAFBFF;
-    width: 100px;
+    background-color: var(--primary-color); 
 }
 
 table {
-            width: 100%; /* Increased width to accommodate more columns */
-            border-collapse: separate; /* Collapse borders between cells */
-            border-spacing: 0 2rem;
-            margin-bottom: 30px;
-            border-radius: 8px;
-            overflow:scroll; 
-            gap: 1rem;
-            font-size: 14px;
-        }
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 2rem;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    overflow:scroll; 
+    gap: 1rem;
+    font-size: 14px;
+}
 
 th{
     font-weight: 400;
