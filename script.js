@@ -1,9 +1,11 @@
 const dataTableBody = document.querySelector('#dataTable tbody');
-const totalCustomerCount = document.getElementById('totalCustomerCount')
-const totalActiveMemberCount = document.getElementById('totalActiveMembers')
-const sort = document.getElementById('sort')
+const totalCustomerCount = document.getElementById('totalCustomerCount');
+const totalActiveMemberCount = document.getElementById('totalActiveMembers');
+const sortBtn = document.getElementById('sortBtn');
 
-const ACTIVE = 'Active'
+const ACTIVE = 'Active';
+
+const displayKeys = ['name', 'company', 'phoneNumber', 'email', 'country', 'status'];
 
 const customerData = [
     { "name": "Jane Cooper", "company": "Microsoft", "phoneNumber": "(225) 555-0118", "email": "jane@microsoft.com", "country": "United States", "status": "Active" },
@@ -15,59 +17,49 @@ const customerData = [
     { "name": "Jacob Jones", "company": "Yahoo", "phoneNumber": "(208) 555-0112", "email": "jacob@yahoo.com", "country": "Brazil", "status": "Active" }
 ];
 
-function addTableRowToDOM(data) {
+function addTableRowToDOM(data, keys) {
     const row = dataTableBody.insertRow();
 
-    const nameCell = row.insertCell();
-    nameCell.textContent = data.name || '';
+    keys.forEach(key => {
+        const cell = row.insertCell();
+        cell.textContent = data[key] || '';
 
-    const companyCell = row.insertCell();
-    companyCell.textContent = data.company || '';
-
-    const phoneCell = row.insertCell();
-    phoneCell.textContent = data.phoneNumber || '';
-
-    const emailCell = row.insertCell();
-    emailCell.textContent = data.email || '';
-
-    const countryCell = row.insertCell();
-    countryCell.textContent = data.country || '';
-
-    const statusCell = row.insertCell();
-    statusCell.textContent = data.status || '';
-    statusCell.classList.add(data.status ? data.status.toLowerCase() : '');
+        if (key === 'status') {
+            cell.classList.add(data.status ? data.status.toLowerCase() : '');
+        }
+    });
 }
 
 function updateCustomerCount(data){
-    totalCustomerCount.textContent = data.length
-    totalActiveMemberCount.textContent = data.filter(customer=> customer.status===ACTIVE).length
+    totalCustomerCount.textContent = data.length;
+    totalActiveMemberCount.textContent = data.filter(customer=> customer.status===ACTIVE).length;
 }
 
-function sorting(selectedOption){
+function handleSortCustomer(field){
     return function(a,b){
-        const fieldA = a[selectedOption.toLowerCase()].toLowerCase();
-        const fieldB = b[selectedOption.toLowerCase()].toLowerCase();
+        const fieldA = a[field.toLowerCase()].toLowerCase();
+        const fieldB = b[field.toLowerCase()].toLowerCase();
     
-        return fieldA.localeCompare(fieldB)
+        return fieldA.localeCompare(fieldB);
     }
 }
 
 function sortTable() {
-    dataTableBody.innerHTML = ''
-    const selectedOption = sort.value;
+    dataTableBody.innerHTML = '';
+    const selectedOption = sortBtn.value;
 
-    customerData.sort(sorting(selectedOption));
+    customerData.sort(handleSortCustomer(selectedOption));
 
     if (customerData.length > 0) {
-        customerData.forEach(customer => addTableRowToDOM(customer));
+        customerData.forEach(customer => addTableRowToDOM(customer, displayKeys));
     } else {
         alert("No data matches the sort criteria.");
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    sortTable()
-    updateCustomerCount(customerData)
+    sortTable();
+    updateCustomerCount(customerData);
 });
 
-filter.addEventListener('change', sortTable)
+sortBtn.addEventListener('change', sortTable)
